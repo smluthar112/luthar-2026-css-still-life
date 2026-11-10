@@ -2,7 +2,7 @@
   * {
     box-sizing: border-box;
   }
-  
+
   /* I was so arrogant. */
 
   /* https://www.w3schools.com/css/css3_variables.asp */
@@ -10,7 +10,8 @@
     --bustelo-red: rgb(229, 0, 63);
     --bustelo-yellow: rgb(255, 217, 11);
     --bustelo-blue: rgb(15, 27, 152);
-    --vertical-offset: 20px; /* will come in handy later calc() */
+    --vertical-offset: 20px;
+    /* will come in handy later calc() */
   }
 
   /* https://stackoverflow.com/questions/57098732/repeating-vertical-lines-using-css */
@@ -22,7 +23,8 @@
     margin: 0;
   }
 
-  .frame { /* for those repeating triangles */
+  .frame {
+    /* for those repeating triangles */
     background: linear-gradient(to right, black 1px, transparent 1px);
     background-size: 10px;
     background-color: var(--bustelo-yellow);
@@ -49,19 +51,20 @@
     background-color: var(--bustelo-yellow);
     clip-path: polygon(18% 30%, 50% 100%, 82% 30%, 60% 70%, 40% 70%);
   }
-  
+
   .hair-placeholder {
     /* pasted/modified from https://css-generators.com/flower-shapes/ */
     /* why is there a blur? and how can i use mask to my adv? */
-    /* thinking of assembling a bunch of blobs to make the hair https://css-generators.com/blob/ */ 
-    width: 150px; /* adjust to control the size */
+    /* thinking of assembling a bunch of blobs to make the hair https://css-generators.com/blob/ */
+    width: 150px;
+    /* adjust to control the size */
     height: 165px;
     position: absolute;
     top: 15px;
     left: 175px;
     aspect-ratio: 1;
-    --g: /19.31% 19.31% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
-    mask: 99.664% 55.787% var(--g),91.286% 78.204% var(--g),73.45% 94.16% var(--g),50.242% 99.999% var(--g),26.978% 94.385% var(--g),8.989% 78.602% var(--g),0.394% 56.267% var(--g),3.164% 32.496% var(--g),16.663% 12.735% var(--g),37.8% 1.511% var(--g),61.731% 1.396% var(--g),82.975% 12.415% var(--g),96.665% 32.044% var(--g),radial-gradient(100% 100%,#000 39.172%,#0000 calc(39.172% + 1px));
+    --g: /19.31% 19.31% radial-gradient(#000 calc(71% - 1px), #0000 71%) no-repeat;
+    mask: 99.664% 55.787% var(--g), 91.286% 78.204% var(--g), 73.45% 94.16% var(--g), 50.242% 99.999% var(--g), 26.978% 94.385% var(--g), 8.989% 78.602% var(--g), 0.394% 56.267% var(--g), 3.164% 32.496% var(--g), 16.663% 12.735% var(--g), 37.8% 1.511% var(--g), 61.731% 1.396% var(--g), 82.975% 12.415% var(--g), 96.665% 32.044% var(--g), radial-gradient(100% 100%, #000 39.172%, #0000 calc(39.172% + 1px));
     background-color: var(--bustelo-blue);
   }
 
@@ -75,7 +78,7 @@
     background-color: var(--bustelo-blue);
     border-radius: 35% 15% 50% 50% / 20% 10% 65% 65%;
   }
-  
+
   .face {
     position: absolute;
     left: 205px;
@@ -108,7 +111,7 @@
     background-color: var(--bustelo-blue);
     border-radius: 50%;
   }
-  
+
   .face.eye {
     position: absolute;
     background-color: var(--bustelo-blue);
@@ -118,21 +121,22 @@
     height: 8px;
     border-radius: 52% 48% 54% 46% / 62% 59% 41% 38%;
   }
-  
+
   .face.eye::before {
-    --offset: 2.5px; 
+    --offset: 2.5px;
     content: "";
     position: absolute;
     background-color: var(--bustelo-blue);
     left: var(--offset);
-    bottom: -1px; /* relative to :: host element? */
+    bottom: -1px;
+    /* relative to :: host element? */
     width: 14px;
     height: 11px;
     border-radius: 34% 51% 46% 35% / 41% 45% 36% 42%;
   }
-  
-  .face.eye::after  {
-    --offset: 5px; 
+
+  .face.eye::after {
+    --offset: 5px;
     content: "";
     position: absolute;
     background-color: var(--bustelo-blue);
@@ -141,34 +145,34 @@
     height: 8px;
     border-radius: 52% 48% 54% 46% / 62% 59% 41% 38%;
   }
-  
+
   .face.eye.left {
     left: 220px;
     top: 110px;
     z-index: 1;
   }
-  
+
   .face.eye.lefteyeshadow {
     background-color: var(--bustelo-yellow);
     left: 220px;
     top: 108px;
     z-index: 0;
   }
-  
+
   .face.eye.lefteyeshadow::before {
     background-color: var(--bustelo-yellow);
   }
-  
+
   .face.eye.lefteyeshadow::after {
     background-color: var(--bustelo-yellow);
   }
-  
+
   .face.eye.right {
     left: 263px;
     top: 110px;
     z-index: 1;
   }
-  
+
   .face.eye.righteyeshadow {
     background-color: var(--bustelo-yellow);
     --offset: 2px;
@@ -176,15 +180,15 @@
     top: 108px;
     z-index: 0;
   }
-  
+
   .face.eye.righteyeshadow::before {
     background-color: var(--bustelo-yellow);
   }
-  
+
   .face.eye.righteyeshadow::after {
     background-color: var(--bustelo-yellow);
   }
-  
+
   .face.lowerlips {
     width: 35px;
     height: 13px;
@@ -193,7 +197,7 @@
     background-color: var(--bustelo-red);
     border-radius: 45% 36% 50% 50% / 0% 0% 100% 100%;
   }
-  
+
   .face.upperlips-left {
     position: absolute;
     background-color: var(--bustelo-red);
@@ -203,7 +207,7 @@
     height: 8px;
     border-radius: 52% 48% 54% 46% / 62% 59% 41% 38%;
   }
-  
+
   .face.upperlips-right {
     position: absolute;
     background-color: var(--bustelo-red);
@@ -213,28 +217,27 @@
     height: 8px;
     border-radius: 52% 48% 54% 46% / 62% 59% 41% 38%;
   }
-
 </style>
 
 <body>
-  
 
-<div class="frame">
-  <div class="triangle"></div>
-  <div class="pentagon"></div>
-  <div class="hair-placeholder"></div>
-  <div class="face-contour"></div> 
-  <!-- tried an after but messed things up -->
-  <div class="face"></div>
-  <div class="face right-nostril"></div>
-  <div class="face left-nostril"></div>
-  <div class="face eye left"></div>
-  <div class="face eye lefteyeshadow"></div>
-  <div class="face eye right"></div>
-  <div class="face eye righteyeshadow"></div>
-  <div class="face lowerlips"></div>
-  <div class="face upperlips-left"></div>
-  <div class="face upperlips-right"></div>
-</div>
-  
+
+  <div class="frame">
+    <div class="triangle"></div>
+    <div class="pentagon"></div>
+    <div class="hair-placeholder"></div>
+    <div class="face-contour"></div>
+    <!-- tried an after but messed things up -->
+    <div class="face"></div>
+    <div class="face right-nostril"></div>
+    <div class="face left-nostril"></div>
+    <div class="face eye left"></div>
+    <div class="face eye lefteyeshadow"></div>
+    <div class="face eye right"></div>
+    <div class="face eye righteyeshadow"></div>
+    <div class="face lowerlips"></div>
+    <div class="face upperlips-left"></div>
+    <div class="face upperlips-right"></div>
+  </div>
+
 </body>
